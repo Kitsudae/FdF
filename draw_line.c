@@ -6,7 +6,7 @@
 /*   By: kvodorez <kvodorez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/04 20:04:54 by kvodorez      #+#    #+#                 */
-/*   Updated: 2022/05/13 22:05:26 by kvodorez      ########   odam.nl         */
+/*   Updated: 2022/05/25 21:44:45 by kvodorez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ float	ft_module(float x)
 	return (x);
 }
 
-void	trans2dinto3d(float *x, float *y, int z)
+void	trans2dinto3d(float *x, float *y, int z, t_fdf *map)
 {
-	*x = (*x - *y) * cos(0.8);
-	*y = (*x + *y) * sin(0.8) - 3*z;
+	*x = (*x - *y) * cos(map->angle);
+	*y = (*x + *y) * sin(map->angle) - 3*z;
 }
 
 void	bresenham_line(float x1, float y1, float x2, float y2, t_fdf *map)
@@ -47,8 +47,8 @@ void	bresenham_line(float x1, float y1, float x2, float y2, t_fdf *map)
 	else
 		map->color = 0x00FFFFFF;
 	//3D
-	trans2dinto3d(&x1, &y1, z1);
-	trans2dinto3d(&x2, &y2, z2);
+	trans2dinto3d(&x1, &y1, z1, map);
+	trans2dinto3d(&x2, &y2, z2, map);
 	//shift
 	x1 += map->shift_x;
 	y1 += map->shift_y;

@@ -5,7 +5,7 @@ SRC =   main.c \
 		get_next_line.c \
 		draw_line.c
 
-INCL = fdf.h get_next_line.h 
+INCL = fdf.h get_next_line.h keys.h
 
 GCC_FLAGS = -Wall -Werror -Wextra -Imlx
 

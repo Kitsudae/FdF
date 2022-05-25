@@ -6,7 +6,7 @@
 /*   By: kvodorez <kvodorez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/12 16:02:45 by kvodorez      #+#    #+#                 */
-/*   Updated: 2022/05/13 22:28:59 by kvodorez      ########   odam.nl         */
+/*   Updated: 2022/05/25 21:44:44 by kvodorez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ typedef struct fdf
 	int		color;
 	int		shift_x;
 	int		shift_y;
-	int		mouse_down;
-	int		mouse_up;
+	float	angle;
 
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -49,7 +48,7 @@ void	read_map(char	*filename, t_fdf *map);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void	bresenham_line(float x1, float y1, float x2, float y2, t_fdf *map);
 void	draw(t_fdf *map);
-void	trans2dinto3d(float *x, float *y, int z);
+void	trans2dinto3d(float *x, float *y, int z, t_fdf *map);
 int		deal_key(int key, t_fdf *map);
 
 #endif

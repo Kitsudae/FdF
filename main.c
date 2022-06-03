@@ -6,7 +6,7 @@
 /*   By: kvodorez <kvodorez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/12 16:16:38 by kvodorez      #+#    #+#                 */
-/*   Updated: 2022/05/25 21:39:21 by kvodorez      ########   odam.nl         */
+/*   Updated: 2022/06/03 21:47:13 by kvodorez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,14 @@ int	deal_key(int key, t_fdf *map)
 }
 
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_fdf	*map;
 	char	*filename;
 
-	filename = "test_maps/42.fdf";
+	if (argc != 2)
+		return (0);
+	filename = ft_strjoin("test_maps/", argv[1]);
 	map = (t_fdf *)malloc(sizeof(t_fdf));
 	read_map(filename, map);
 	map->mlx_ptr = mlx_init();

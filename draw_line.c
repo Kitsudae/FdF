@@ -6,7 +6,7 @@
 /*   By: kvodorez <kvodorez@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/04 20:04:54 by kvodorez      #+#    #+#                 */
-/*   Updated: 2022/05/25 21:44:45 by kvodorez      ########   odam.nl         */
+/*   Updated: 2022/06/16 20:28:42 by kvodorez      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	bresenham_line(float x1, float y1, float x2, float y2, t_fdf *map)
 	else
 		map->color = 0x00FFFFFF;
 	//3D
-	trans2dinto3d(&x1, &y1, z1, map);
-	trans2dinto3d(&x2, &y2, z2, map);
+	//trans2dinto3d(&x1, &y1, z1, map);
+	//trans2dinto3d(&x2, &y2, z2, map);
 	//shift
 	x1 += map->shift_x;
 	y1 += map->shift_y;
